@@ -1,0 +1,221 @@
+/* HACER CONDICIONALES DE TAMAÑO SEGÚN LA PAGE (INDEX, MULTIMEDIA, NOVEDADES)*/
+@mixin media($value) {
+    $media-sm: "only screen and (min-width: 200px) and (max-width: 499px)";
+    $media-msm: "only screen and (min-width: 500px) and (max-width: 699px)";
+    $media-bsm: "only screen and (min-width: 700px) and (max-width: 999px)";
+    $media-smd: "only screen and (min-width: 1000px) and (max-width:1300px)";
+    $media-md: "only screen and (min-width: 1301px) and (max-width:1799px)";
+    $media-lg: "only screen and (min-width : 1800px)";
+    $media-mf: "only screen and (min-width: 200px) and (max-width: 1000px)";
+    $media-gsm: "only screen and (min-width: 200px) and (max-width: 699px)";
+    $media-glg: "only screen and (min-width: 700px)" ;
+
+    @if $value == sm {
+        @media #{$media-sm} { 
+            .main_news {
+                height: 330vw;
+                .main_news_video {
+                    iframe {
+                        height: 483px;
+                    }
+                }
+            }
+            .main_about {
+                height: 425vw;
+                .main_about_descrip {
+                    flex-direction: column !important;
+                    div {
+                        width: 80% !important;
+                        h2 {
+                            text-align: center !important;
+                            font-size: 5vw !important;
+                        }
+                        p {
+                            font-size: 4vw !important;
+                            text-align: center !important;
+                        }
+                    }                    
+                }
+                .main_about_descrip-logo {
+                    height: 50vw !important;
+                    width: 40vw !important;
+                }
+            }
+            .main_multimedia {
+                height: 1000vw;;
+                .main_mult_video {
+                    width: 100%;
+                    iframe {
+                        height: 483px;
+                    }
+                }
+            }
+        }
+    }
+
+    @else if $value == msm {
+        @media #{$media-msm} { 
+            .main_news {
+                height: 300vw;
+            }
+            .main_about {
+                height: 330vw;
+                .main_about_descrip {
+                    flex-direction: column !important;
+                    div {
+                        width: 80% !important;
+                        h2 {
+                            text-align: center !important;
+                            font-size: 4vw !important;
+                        }
+                        p {
+                            font-size: 3vw !important;
+                            text-align: center !important;
+                        }
+                    }                    
+                }
+                .main_about_descrip-logo {
+                    height: 50vw !important;
+                    width: 40vw !important;
+                }
+            }
+            .main_multimedia {
+                height: 900vw;
+            }
+        }
+    }
+
+    @else if $value == bsm {
+        @media #{$media-bsm} { 
+            .main_news {
+                height: 215vw;
+            }
+            .main_about {
+                height: 270vw;
+            }
+            .main_multimedia {
+                height: 400vw;
+            }
+        }
+    }
+    @else if $value == smd {
+        @media #{$media-smd} { 
+            .main_news {
+                height: 188vw;
+            }
+            .main_about {
+                height: 330vw;
+            }
+            .main_multimedia {
+                height: 331vw;
+            }
+        }
+    }
+    @else if $value == md {
+        @media #{$media-md} { 
+            .main_news {
+                height: 160vw;
+            }
+            .main_about {
+                height: 260vw;
+            }
+            .main_multimedia {
+                height:  300vw;
+            }
+        }
+    }
+    @else if $value == lg {
+        @media #{$media-lg} { 
+            .main_news {
+                height: 149vw;
+            }
+            .main_about {
+                height: 230vw;
+            }
+            .main_multimedia {
+                height: 280vw;
+            }
+        }
+    }
+
+    @else if $value == mf {
+        @media #{$media-mf} { 
+            .navbar-brand {
+                font-size: 4vw !important;
+            }    
+            .nav-link {
+                font-size: 2.5vw !important;
+             }
+            footer{
+                justify-content: space-around !important;
+                li {
+                    .fa {
+                        font-size: 9vw !important;
+                    }
+                }
+            }
+        }
+    }
+
+    @else if $value == gsm {
+        @media #{$media-gsm} { 
+            .main_multimedia {
+                .grilla1 {
+                    height: 45%;
+                    grid-template-areas:
+                    "titles"
+                    "img1"
+                    "img2"
+                    "img3"
+                    "img4"
+                    "img5"
+                    "img6";
+                    grid-template-rows: 3%  repeat(6, 15%);
+                    grid-template-columns: 85%;
+                }
+                .grilla2 {
+                    height: 30%;
+                    grid-template-areas:
+                    "titles titles"
+                    "img2 img2"
+                    "img1 img4"
+                    "img3 img3";
+                    grid-template-rows: 4% 35% 28% 30%;
+                    grid-template-columns: repeat(2, 42%);
+                }
+                .main_multimediaFirstTitle {
+                    font-size: 5vw !important;
+                }
+                .main_multimediaSecondTitle {
+                    font-size: 4vw !important;
+                }
+            }
+        }
+    }
+    @else if $value == glg {
+        @media #{$media-glg} { 
+            .main_multimedia {
+                .grilla1 {
+                    height: 30%;
+                    grid-template-areas:
+                    "titles titles"
+                    "img1 img2"
+                    "img3 img4"
+                    "img5 img6";
+                    grid-template-rows: 4%  repeat(3, 30%);
+                    grid-template-columns: repeat(2, 40%);
+                }
+                .grilla2 {
+                    height: 40%;
+                    grid-template-areas:
+                    "titles titles"
+                    "img2 img2"
+                    "img1 img4"
+                    "img3 img3";
+                    grid-template-rows: 4% 32% 30% 32%;
+                    grid-template-columns: repeat(2, 30%);    
+                }
+            }
+        }
+    }
+}

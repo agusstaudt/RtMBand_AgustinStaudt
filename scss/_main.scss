@@ -1,0 +1,255 @@
+@import 'media_functions.scss';
+@import 'variables.scss';
+
+.generalSet {
+    .nav-link {
+        font-size: 1.5vw;
+        font-family: 'Mochiy Pop P One', sans-serif;
+    }
+    .navbar-brand {
+        font-size: 2vw;
+        font-family: 'Mochiy Pop P One', sans-serif;
+        background-color: #f3dc78;
+        background-image: linear-gradient(45deg, #f3f0c3, #5d3200);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        -moz-text-fill-color: transparent;
+    }
+}
+.generalSetIndex {
+    width: 100%;
+    height: 100vh;
+    @extend .generalSet;
+} 
+.generalSetFTitles {
+    text-align: center;
+    color: white;
+}
+.generalSetSTitles {
+    text-align: center;
+    color: palevioletred;
+}
+
+/* MAIN SET*/
+@include media(lg);
+@include media(md);
+@include media(smd);
+@include media(bsm);
+@include media(msm);
+@include media(sm);
+@include media(mf);
+@include media(gsm);
+@include media(glg);
+
+
+/* MAIN NOVEDADES*/
+.main_news {
+    display: $display;
+    flex-direction: column;
+    justify-content: space-around;
+    .table{
+        font-size: 2vw;
+        th, td {
+            vertical-align: middle;
+            text-align: center;
+            a {
+                text-decoration: none; 
+                color: $color-link;   
+            }
+        }
+    }
+    .main_newsFirstTitle {
+        @extend .generalSetFTitles;
+        font-size: 4vw;
+    }
+    .main_newsSecondTitle {
+        @extend .generalSetSTitles;
+        font-size: 3vw;
+    }
+    .main_newsLinkMultimedia {
+        text-align: center;
+        color: $color-link;
+        font-size: 4vw;
+        text-decoration: none;
+
+    }
+}
+
+/* MAIN ABOUT*/
+.main_about {
+    display: $display;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    .main_about_descrip {
+        display: $display;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        div {
+             width: 50%;
+             padding-left: 2vw;
+             justify-self: end;
+             h2 {
+                 font-family: 'Mochiy Pop P One', sans-serif;
+                 background-color: #f3dc78;
+                 background-image: linear-gradient(45deg, #f3f0c3, #5d3200);
+                 background-size: 100%;
+                 -webkit-background-clip: text;
+                 -moz-background-clip: text;
+                 -webkit-text-fill-color: transparent; 
+                 -moz-text-fill-color: transparent;
+                 text-align: left;
+             }
+             p {
+                 text-align: left;
+                 font-size: 2.5vw;
+             }
+        }
+    }
+    .main_aboutFirstTitle {
+        @extend .generalSetFTitles;
+        font-size: 5vw;
+    }
+    .main_aboutSecondTitle {
+        @extend .generalSetSTitles;
+        font-size: 4vw;
+    }
+    .main_aboutWho {
+        color: white;
+    }
+    .main_about_descrip-logo {
+        height: 40vw;
+        width: 30vw;
+    }
+}
+
+/* MAIN MULTIMEDIA*/
+.main_multimedia {
+    display: $display;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    .grilla1_titles {
+        grid-area: titles;
+    }
+    .grilla1_img1 {
+        grid-area: img1;
+    }
+    .grilla1_img2 {
+        grid-area: img2;
+    }
+    .grilla1_img3 {
+        grid-area: img3;
+    }
+    .grilla1_img4 {
+        grid-area: img4;
+    }
+    .grilla1_img5 {
+        grid-area: img5;
+    }
+    .grilla1_img6 {
+        grid-area: img6;
+    }
+    .grilla1 {
+        width: 100%;
+        display: grid;
+        align-items: center;
+        align-content: space-around;    
+        justify-content: space-evenly;
+        gap: 2vw 2vw;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .grilla2_titles {
+        grid-area: titles;
+    }
+    .grilla2_img1 {
+        grid-area: img1;
+    }
+    .grilla2_img2 {
+        grid-area: img2;
+    }
+    .grilla2_img3 {
+        grid-area: img3;
+        justify-self: center;
+        width: 78vw;
+    }
+    .grilla2_img4 {
+        grid-area: img4;
+    }
+    .grilla2 {
+        width: 100%;
+        display: grid;
+        align-items: center;
+        align-content: space-around;
+        justify-content: center;
+        gap: 2vw 2vw;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+   .main_multimediaFirstTitle {
+        @extend .generalSetFTitles;
+        font-size: 3vw;
+    }
+    .main_multimediaSecondTitle {
+        @extend .generalSetSTitles;
+        font-size: 2vw;
+    }
+    .main_mult_video {
+        width: 100%;
+    }
+}
+
+/* MAIN CONTACTO*/
+.main_contact {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.637)), url(../img/img11.jpg);
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    background-size: cover;
+    background-repeat: no-repeat no-repeat;
+    background-position: center center;
+    background-color: #ced6e0;
+    background-blend-mode: multiply;
+    @extend .generalSetIndex;
+    @extend .generalSet;
+    display: $display;
+    flex-direction: column;
+    justify-content: center;
+    input[type=text], select, textarea {
+                width: 100%; 
+                padding: 12px; 
+                border: 1px solid #ccc; 
+                border-radius: 4px; 
+                box-sizing: border-box; 
+                margin-top: 6px; 
+                margin-bottom: 16px; 
+                resize: vertical;
+    }
+    input[type=submit] {
+                background-color: $color-link;
+                color: white;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+    }
+  input[type=submit]:hover {
+    background-color: $color-link;
+  }
+  
+  /* Add a background color and some padding around the form */
+  .container {
+    width: 50%;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+}
+
+
